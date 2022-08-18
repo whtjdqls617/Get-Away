@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct PostManager {
     
@@ -13,7 +14,7 @@ struct PostManager {
     
     private let apiKey = "bLLN-gZPMVL302TW5Hbh6KWXJjogg-8C2i75EFqNNiA"
     
-    func getData(_ perPage : Int, _ pageNumber : Int, completion : @escaping ([Post]) -> Void ) {
+    func getData(_ perPage : Int, _ pageNumber : Int, completion : @escaping ([Post]) -> Void) {
         let api = makeApi(base, apiKey)
         if let url = URL(string: fetchURL(perPage, pageNumber, api)) {
             let session = URLSession(configuration: .default)
@@ -32,6 +33,22 @@ struct PostManager {
                 }
             }
             task.resume()
+        }
+    }
+    
+    func getData2(_ perPage : Int, _ pageNumber : Int, completion : @escaping ([Post]) -> Void) {
+        let api = makeApi(base, apiKey)
+        let url = fetchURL(perPage, pageNumber, api)
+        let request = AF.request(url, method: .get).validate(statusCode: 200..<300)
+        request.responseData { dataResponse in
+            switch dataResponse.result {
+            case .success:
+                guard let value = dataResponse.value else {return}
+                guard let result = self.parseJSON(value) else {return}
+                completion(result)
+            case .failure:
+                print("error")
+            }
         }
     }
     

@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Kingfisher
 
 class MainViewController: UIViewController {
 
@@ -63,7 +64,8 @@ extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell else { return UICollectionViewCell() }
-        cell.postImageView.image = mainViewModel.makeImage(postList?[indexPath.item].urls.small ?? "")
+//        cell.postImageView.image = mainViewModel.makeImage(postList?[indexPath.item].urls.small ?? "")
+        cell.postImageView.kf.setImage(with: URL(string:  postList?[indexPath.item].urls.small ?? ""))
         return cell
     }
 }
