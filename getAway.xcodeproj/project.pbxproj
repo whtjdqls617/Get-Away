@@ -35,6 +35,8 @@
 		C7D3197728A5039E00940AFE /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3197628A5039E00940AFE /* PostModel.swift */; };
 		C7D319D328ACCDF000940AFE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7D319D228ACCDF000940AFE /* Alamofire */; };
 		C7D319D628ACE41F00940AFE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C7D319D528ACE41F00940AFE /* Kingfisher */; };
+		C7D319D828AE124700940AFE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319D728AE124700940AFE /* SearchViewController.swift */; };
+		C7D319DA28AE125600940AFE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319D928AE125600940AFE /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		C7D3197028A5025000940AFE /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		C7D3197428A5036400940AFE /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		C7D3197628A5039E00940AFE /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		C7D319D728AE124700940AFE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C7D319D928AE125600940AFE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D3191D28A4E1A800940AFE /* MainViewController.swift */,
+				C7D319D728AE124700940AFE /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D3196628A4F6DB00940AFE /* MainViewModel.swift */,
+				C7D319D928AE125600940AFE /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -403,6 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D319DA28AE125600940AFE /* SearchViewModel.swift in Sources */,
+				C7D319D828AE124700940AFE /* SearchViewController.swift in Sources */,
 				C7D3197128A5025000940AFE /* MainCollectionViewCell.swift in Sources */,
 				C7D3197728A5039E00940AFE /* PostModel.swift in Sources */,
 				C7D3196728A4F6DB00940AFE /* MainViewModel.swift in Sources */,
