@@ -16,7 +16,7 @@ class MainViewModel {
     private let postManager = PostManager()
     
     func getDataFromServer() {
-        postManager.getData(perPage, pageNumber) { [weak self] postList in
+        postManager.getData2(perPage, pageNumber) { [weak self] postList in
 //            self?.imageCaching(photoList)
             if self?.postList == nil {
                 self?.postList = postList
