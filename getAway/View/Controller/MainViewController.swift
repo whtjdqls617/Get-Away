@@ -95,9 +95,3 @@ extension MainViewController: CustomLayoutDelegate {
         print(indexPath.item)
     }
 }
-
-extension MainViewController: PressImageViewDelegate {
-    func pressImageView(_ cell: MainCollectionViewCell) {
-        print("hi")
-    }
-}

@@ -7,16 +7,10 @@
 
 import UIKit
 
-protocol PressImageViewDelegate : AnyObject {
-    func pressImageView(_ cell : MainCollectionViewCell)
-}
-
 class MainCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "mainCollectionViewCell"
-    
-    weak var mainCellDelegate : PressImageViewDelegate?
-    
+        
     @IBOutlet weak var postImageView: UIImageView!
     
     override func awakeFromNib() {
