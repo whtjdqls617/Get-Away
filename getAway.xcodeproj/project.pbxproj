@@ -37,6 +37,11 @@
 		C7D319D628ACE41F00940AFE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C7D319D528ACE41F00940AFE /* Kingfisher */; };
 		C7D319D828AE124700940AFE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319D728AE124700940AFE /* SearchViewController.swift */; };
 		C7D319DA28AE125600940AFE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319D928AE125600940AFE /* SearchViewModel.swift */; };
+		C7D319E128AF6A1200940AFE /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319E028AF6A1200940AFE /* UploadViewController.swift */; };
+		C7D319E328AF6A2500940AFE /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319E228AF6A2500940AFE /* UploadViewModel.swift */; };
+		C7D319E828AF6A5400940AFE /* UploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319E628AF6A5400940AFE /* UploadCollectionViewCell.swift */; };
+		C7D319E928AF6A5400940AFE /* UploadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D319E728AF6A5400940AFE /* UploadCollectionViewCell.xib */; };
+		C7D319EC28AF6BA400940AFE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319EB28AF6BA400940AFE /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		C7D3197628A5039E00940AFE /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		C7D319D728AE124700940AFE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C7D319D928AE125600940AFE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		C7D319E028AF6A1200940AFE /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		C7D319E228AF6A2500940AFE /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
+		C7D319E628AF6A5400940AFE /* UploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7D319E728AF6A5400940AFE /* UploadCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadCollectionViewCell.xib; sourceTree = "<group>"; };
+		C7D319EB28AF6BA400940AFE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,7 @@
 				C7D3195028A4E1EC00940AFE /* Model */,
 				C7D3194D28A4E1CD00940AFE /* View */,
 				C7D3195128A4E1F200940AFE /* ViewModel */,
+				C7D319EA28AF6B4700940AFE /* Protocol */,
 				C7D3195228A4EB3F00940AFE /* Utils */,
 				C7D3194F28A4E1DC00940AFE /* Resource */,
 				C7D3194C28A4E1C200940AFE /* Application */,
@@ -194,6 +205,7 @@
 			children = (
 				C7D3191D28A4E1A800940AFE /* MainViewController.swift */,
 				C7D319D728AE124700940AFE /* SearchViewController.swift */,
+				C7D319E028AF6A1200940AFE /* UploadViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +233,7 @@
 			children = (
 				C7D3196628A4F6DB00940AFE /* MainViewModel.swift */,
 				C7D319D928AE125600940AFE /* SearchViewModel.swift */,
+				C7D319E228AF6A2500940AFE /* UploadViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -245,7 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				C7D3196F28A5025000940AFE /* MainCollectionViewCell.swift */,
-				C7D3197028A5025000940AFE /* MainCollectionViewCell.xib */,
+				C7D319E628AF6A5400940AFE /* UploadCollectionViewCell.swift */,
+				C7D319DF28AF69D100940AFE /* xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -256,6 +270,23 @@
 				C7D3197428A5036400940AFE /* PostManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C7D319DF28AF69D100940AFE /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				C7D3197028A5025000940AFE /* MainCollectionViewCell.xib */,
+				C7D319E728AF6A5400940AFE /* UploadCollectionViewCell.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		C7D319EA28AF6B4700940AFE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C7D319EB28AF6BA400940AFE /* Image.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +413,7 @@
 				C7D3192928A4E1A900940AFE /* LaunchScreen.storyboard in Resources */,
 				C7D3196828A4FA4A00940AFE /* GoogleService-Info.plist in Resources */,
 				C7D3192628A4E1A900940AFE /* Assets.xcassets in Resources */,
+				C7D319E928AF6A5400940AFE /* UploadCollectionViewCell.xib in Resources */,
 				C7D3197228A5025000940AFE /* MainCollectionViewCell.xib in Resources */,
 				C7D3192128A4E1A800940AFE /* Main.storyboard in Resources */,
 			);
@@ -410,12 +442,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D319DA28AE125600940AFE /* SearchViewModel.swift in Sources */,
+				C7D319E128AF6A1200940AFE /* UploadViewController.swift in Sources */,
 				C7D319D828AE124700940AFE /* SearchViewController.swift in Sources */,
+				C7D319E828AF6A5400940AFE /* UploadCollectionViewCell.swift in Sources */,
+				C7D319EC28AF6BA400940AFE /* Image.swift in Sources */,
 				C7D3197128A5025000940AFE /* MainCollectionViewCell.swift in Sources */,
 				C7D3197728A5039E00940AFE /* PostModel.swift in Sources */,
 				C7D3196728A4F6DB00940AFE /* MainViewModel.swift in Sources */,
 				C7D3196B28A5018400940AFE /* CustomLayout.swift in Sources */,
 				C7D3191E28A4E1A800940AFE /* MainViewController.swift in Sources */,
+				C7D319E328AF6A2500940AFE /* UploadViewModel.swift in Sources */,
 				C7D3191A28A4E1A800940AFE /* AppDelegate.swift in Sources */,
 				C7D3197528A5036400940AFE /* PostManager.swift in Sources */,
 				C7D3192428A4E1A800940AFE /* getAway.xcdatamodeld in Sources */,
