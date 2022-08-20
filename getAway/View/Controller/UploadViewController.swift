@@ -17,13 +17,14 @@ class UploadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configure()
+        setDelegate()
+        initLayout()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setDelegate()
-        configure()
         setPermissions()
-        
     }
     
     func setDelegate() {
@@ -34,6 +35,16 @@ class UploadViewController: UIViewController {
     func configure() {
         let cell = UINib(nibName: "UploadCollectionViewCell", bundle: nil) // nibName에 파일명 그대로 들어가야함
         albumCollectionView.register(cell, forCellWithReuseIdentifier: UploadCollectionViewCell.identifier)
+    }
+    
+    func initLayout() {
+        let layout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width / 4
+        let height = width
+        layout.itemSize = CGSize(width: width, height: height) //아이템 사이즈 초기화
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        albumCollectionView.collectionViewLayout = layout //CollctionView의 Layout 적용
     }
 }
 
@@ -97,7 +108,7 @@ extension UploadViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UploadCollectionViewCell.identifier, for: indexPath) as? UploadCollectionViewCell else {return UICollectionViewCell() }
-        
+        cell.layer.borderWidth = 1
         guard let asset = uploadViewModel.allAlbums?.object(at: indexPath.item) else {return UICollectionViewCell()}
         
         uploadViewModel.imageManager.requestImage(for: asset, targetSize: CGSize(width: cell.bounds.width, height: cell.bounds.height), contentMode: .aspectFill, options: nil) { image, _ in
@@ -105,7 +116,6 @@ extension UploadViewController: UICollectionViewDataSource {
         }
         return cell
     }
-    
 }
 
 extension UploadViewController: UICollectionViewDelegate {
@@ -117,14 +127,5 @@ extension UploadViewController: UICollectionViewDelegate {
         uploadViewModel.imageManager.requestImage(for: asset, targetSize: CGSize(width: selectedImageView.bounds.width, height: selectedImageView.bounds.height), contentMode: .aspectFit, options: nil) { image, _ in
             self.selectedImageView.image = image
         }
-    }
-}
-
-extension UploadViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewSize = collectionView.frame.size.width
-        print(collectionViewSize)
-        
-        return CGSize(width: collectionViewSize / 4, height: collectionViewSize / 4)
     }
 }

@@ -21,7 +21,6 @@ class UploadCollectionViewCell: UICollectionViewCell {
 
     func initCell() {
 
-//        albumImageView.bounds.width = self.bounds.width
-//        albumImageView.bounds.height = self.bounds.height
+
     }
 }
