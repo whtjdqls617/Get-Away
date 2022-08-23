@@ -80,6 +80,10 @@ extension MainViewController: UICollectionViewDelegate {
             self.mainViewModel.getDataFromServer()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+    }
 }
 
 extension MainViewController: CustomLayoutDelegate {
@@ -89,9 +93,5 @@ extension MainViewController: CustomLayoutDelegate {
     
     func collectionView(_ collectionView: UICollectionView, widthForImageAtIndexPath indexPath: IndexPath) -> CGFloat {
         return CGFloat(postList?[indexPath.item].width ?? 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
     }
 }

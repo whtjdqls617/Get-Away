@@ -18,13 +18,13 @@ class UploadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setPermissions()
         configure()
         setDelegate()
         initLayout()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setPermissions()
     }
     
     func setDelegate() {
@@ -46,6 +46,18 @@ class UploadViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         albumCollectionView.collectionViewLayout = layout //CollctionView의 Layout 적용
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if selectedImageView != nil {
+            return true
+        }
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let uploadSecondVC = segue.destination as? UploadSecondViewController else {return}
+        uploadSecondVC.receivedImage = selectedImageView.image
+    }
 }
 
 extension UploadViewController {
@@ -57,6 +69,7 @@ extension UploadViewController {
             print("허가됨")
             uploadViewModel.getAlbum()
             DispatchQueue.main.async { [weak self] in
+                self?.setImage()
                 self?.albumCollectionView.reloadData()
             }
         case .denied:
@@ -69,6 +82,7 @@ extension UploadViewController {
                     print("허가함")
                     self?.uploadViewModel.getAlbum()
                     DispatchQueue.main.async {
+                        self?.setImage()
                         self?.albumCollectionView.reloadData()
                     }
                 case .denied:
@@ -81,6 +95,13 @@ extension UploadViewController {
             print("접근 제한됨")
         default:
             break
+        }
+    }
+    
+    func setImage() {
+        guard let asset = self.uploadViewModel.allAlbums?.object(at: 0) else {return}
+        self.uploadViewModel.imageManager.requestImage(for: asset, targetSize: CGSize(width: self.selectedImageView.bounds.width , height: self.selectedImageView.bounds.height), contentMode: .aspectFit, options: nil) { image, _ in
+            self.selectedImageView.image = image
         }
     }
     
@@ -102,7 +123,6 @@ extension UploadViewController {
 
 extension UploadViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // 앨범에 있는 사진 개수
         return uploadViewModel.allAlbums?.count ?? 0
     }
     

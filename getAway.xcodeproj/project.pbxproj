@@ -42,6 +42,13 @@
 		C7D319E828AF6A5400940AFE /* UploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319E628AF6A5400940AFE /* UploadCollectionViewCell.swift */; };
 		C7D319E928AF6A5400940AFE /* UploadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D319E728AF6A5400940AFE /* UploadCollectionViewCell.xib */; };
 		C7D319EC28AF6BA400940AFE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319EB28AF6BA400940AFE /* Image.swift */; };
+		C7D319EE28B0DE5500940AFE /* UploadSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319ED28B0DE5400940AFE /* UploadSecondViewController.swift */; };
+		C7D319F028B369A500940AFE /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319EF28B369A500940AFE /* MyPageViewController.swift */; };
+		C7D319F928B49D6700940AFE /* MyPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319F728B49D6700940AFE /* MyPageCollectionViewCell.swift */; };
+		C7D319FA28B49D6700940AFE /* MyPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D319F828B49D6700940AFE /* MyPageCollectionViewCell.xib */; };
+		C7D319FC28B4BFB400940AFE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319FB28B4BFB400940AFE /* TabBarViewController.swift */; };
+		C7D319FE28B4C73D00940AFE /* SelectPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319FD28B4C73D00940AFE /* SelectPlaceViewController.swift */; };
+		C7D31A0028B4C74B00940AFE /* SelectPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D319FF28B4C74B00940AFE /* SelectPlaceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +97,13 @@
 		C7D319E628AF6A5400940AFE /* UploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7D319E728AF6A5400940AFE /* UploadCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadCollectionViewCell.xib; sourceTree = "<group>"; };
 		C7D319EB28AF6BA400940AFE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		C7D319ED28B0DE5400940AFE /* UploadSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSecondViewController.swift; sourceTree = "<group>"; };
+		C7D319EF28B369A500940AFE /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		C7D319F728B49D6700940AFE /* MyPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7D319F828B49D6700940AFE /* MyPageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageCollectionViewCell.xib; sourceTree = "<group>"; };
+		C7D319FB28B4BFB400940AFE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		C7D319FD28B4C73D00940AFE /* SelectPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlaceViewController.swift; sourceTree = "<group>"; };
+		C7D319FF28B4C74B00940AFE /* SelectPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlaceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +220,10 @@
 				C7D3191D28A4E1A800940AFE /* MainViewController.swift */,
 				C7D319D728AE124700940AFE /* SearchViewController.swift */,
 				C7D319E028AF6A1200940AFE /* UploadViewController.swift */,
+				C7D319ED28B0DE5400940AFE /* UploadSecondViewController.swift */,
+				C7D319EF28B369A500940AFE /* MyPageViewController.swift */,
+				C7D319FB28B4BFB400940AFE /* TabBarViewController.swift */,
+				C7D319FD28B4C73D00940AFE /* SelectPlaceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -234,6 +252,7 @@
 				C7D3196628A4F6DB00940AFE /* MainViewModel.swift */,
 				C7D319D928AE125600940AFE /* SearchViewModel.swift */,
 				C7D319E228AF6A2500940AFE /* UploadViewModel.swift */,
+				C7D319FF28B4C74B00940AFE /* SelectPlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,6 +278,7 @@
 			children = (
 				C7D3196F28A5025000940AFE /* MainCollectionViewCell.swift */,
 				C7D319E628AF6A5400940AFE /* UploadCollectionViewCell.swift */,
+				C7D319F728B49D6700940AFE /* MyPageCollectionViewCell.swift */,
 				C7D319DF28AF69D100940AFE /* xib */,
 			);
 			path = Cell;
@@ -277,6 +297,7 @@
 			children = (
 				C7D3197028A5025000940AFE /* MainCollectionViewCell.xib */,
 				C7D319E728AF6A5400940AFE /* UploadCollectionViewCell.xib */,
+				C7D319F828B49D6700940AFE /* MyPageCollectionViewCell.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -411,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D3192928A4E1A900940AFE /* LaunchScreen.storyboard in Resources */,
+				C7D319FA28B49D6700940AFE /* MyPageCollectionViewCell.xib in Resources */,
 				C7D3196828A4FA4A00940AFE /* GoogleService-Info.plist in Resources */,
 				C7D3192628A4E1A900940AFE /* Assets.xcassets in Resources */,
 				C7D319E928AF6A5400940AFE /* UploadCollectionViewCell.xib in Resources */,
@@ -447,13 +469,19 @@
 				C7D319E828AF6A5400940AFE /* UploadCollectionViewCell.swift in Sources */,
 				C7D319EC28AF6BA400940AFE /* Image.swift in Sources */,
 				C7D3197128A5025000940AFE /* MainCollectionViewCell.swift in Sources */,
+				C7D319FE28B4C73D00940AFE /* SelectPlaceViewController.swift in Sources */,
+				C7D319EE28B0DE5500940AFE /* UploadSecondViewController.swift in Sources */,
 				C7D3197728A5039E00940AFE /* PostModel.swift in Sources */,
 				C7D3196728A4F6DB00940AFE /* MainViewModel.swift in Sources */,
 				C7D3196B28A5018400940AFE /* CustomLayout.swift in Sources */,
+				C7D319F028B369A500940AFE /* MyPageViewController.swift in Sources */,
+				C7D31A0028B4C74B00940AFE /* SelectPlaceViewModel.swift in Sources */,
 				C7D3191E28A4E1A800940AFE /* MainViewController.swift in Sources */,
 				C7D319E328AF6A2500940AFE /* UploadViewModel.swift in Sources */,
+				C7D319FC28B4BFB400940AFE /* TabBarViewController.swift in Sources */,
 				C7D3191A28A4E1A800940AFE /* AppDelegate.swift in Sources */,
 				C7D3197528A5036400940AFE /* PostManager.swift in Sources */,
+				C7D319F928B49D6700940AFE /* MyPageCollectionViewCell.swift in Sources */,
 				C7D3192428A4E1A800940AFE /* getAway.xcdatamodeld in Sources */,
 				C7D3191C28A4E1A800940AFE /* SceneDelegate.swift in Sources */,
 			);
